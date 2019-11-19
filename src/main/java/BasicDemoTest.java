@@ -1,5 +1,6 @@
 import com.applitools.eyes.BatchInfo;
 import com.applitools.eyes.RectangleSize;
+import com.applitools.eyes.StdoutLogHandler;
 import com.applitools.eyes.TestResults;
 import com.applitools.eyes.selenium.Eyes;
 import com.applitools.eyes.selenium.StitchMode;
@@ -30,6 +31,7 @@ public class BasicDemoTest {
         // Initialize the eyes SDK and set your private API key.
         Eyes eyes = new Eyes();
         eyes.setSendDom(false);
+        eyes.setLogHandler(new StdoutLogHandler(true));
 
         //Set only once per Jenkins job
         BatchInfo mybatch = new BatchInfo(System.getenv("APPLITOOLS_BATCH_NAME"));
@@ -72,7 +74,7 @@ public class BasicDemoTest {
             System.out.println("Pre checkwindow: " + timeStamp_preCheck);
             eyes.checkWindow("Question Page 1");
             String timeStamp_checkWindow = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss.SSS").format(new java.util.Date());
-            System.out.println("Post Checkwindow" + timeStamp_checkWindow);
+            System.out.println("Post Checkwindow: " + timeStamp_checkWindow);
 
             //			//Visual Region Checkpoint
             String timeStamp_checkRegion = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss.SSS").format(new java.util.Date());
