@@ -50,7 +50,7 @@ public class BasicDemoTest {
 
             // Start the test by setting AUT's name, test name and viewport size (width X
             // height)
-            eyes.open(driver, "Timestamp  App", "Timestamp Test", new RectangleSize(1200,800));
+            eyes.open(driver, "Timestamp  App", "Timestamp Test", new RectangleSize(1000,700));
 //			eyes.open(driver, "Demo App", "Smoke Test");
 
             //To see visual bugs, change the above URL to:
